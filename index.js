@@ -13,26 +13,19 @@ async function randomActivity() {
     displayActivity(activity)   
 }
 async function filterAct() {
-    let i
-    if (freeOnly.checked){
-        i = 0
-        const res = await fetch(`http://www.boredapi.com/api/activity?type=${type}&participants=${participants}&price=${i}`)
-        const genActData = await res.json();
-        displayActivity(genActData)
-    } else {
-        const res = await fetch(`http://www.boredapi.com/api/activity?type=${type}&participants=${participants}`)
-        const genActData = await res.json();
-        displayActivity(genActData)
-    }
+    const res = await fetch(`http://www.boredapi.com/api/activity?type=${type}&participants=${participants}`)
+    const genActData = await res.json();
+    displayActivity(genActData)
 }
 
 function displayActivity(activity) {
     onlyOne()
     const newAct = document.createElement('section')
-    if (activity.type === 'undefined') {
-        newAct.innerHTML = 'No tasks found'
+    if (activity.type === undefined) {
+        newAct.innerHTML = '<h3>Sorry, No tasks found</h3>'
         currentAct.append(newAct)
     } else {
+        console.log(activity.type)
         newAct.innerHTML = `
         <ul class="list">
             <li class="li">${activity.activity}!</li>
