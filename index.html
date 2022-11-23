@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet"> 
+    <title>Fight Boredom</title>
+</head>
+<body>
+    <header>
+        <h1 id="title">Fight Boredom</h1>
+        <h3 id="subTitle">It's a "yes" day</h3>
+    </header>
+    <main>
+        <!-- gen = generator -->
+        <h3 id="genTitle">Generate an activity below</h3>
+        <form id="genForm">
+
+			<select class="input" id="type">
+				<option disabled selected value> -- Type of Activity -- </option>
+				<option value="recreational">Recreational</option>
+				<option value="education">Education</option>
+				<option value="social">Social</option>
+				<option value="diy">DIY</option>
+				<option value="charity">Charity</option>
+                <option value="cooking">Cooking</option>
+                <option value="relaxation">Relaxation</option>
+                <option value="music">Music</option>
+                <option value="busywork">Busywork</option>
+			</select>
+            <select class="input" id="participants">
+                <option disabled selected value> -- Number of Participants -- </option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5+">5+</option>
+            </select>
+
+        <div class="input">
+            <input type="checkbox" id="freeOnly" name="freeOnly" value="Show Free Options Only">
+            <label for="freeOnly">Show Free Options Only</label>
+        </div>
+            <button class="input" type="button" onClick="filterAct()" id="generateAct">GENERATE ACTIVITY</button>
+
+        </form>
+        <section id="activityContainer">
+            <button id="randomAct" type="button" onClick="randomActivity()">RANDOM ACTIVITY</button>
+            <article id="currentAct"></article>
+        </section>
+    </main>
+    <script type="text/javascript" src="index.js"></script>
+</body>
+</html>
